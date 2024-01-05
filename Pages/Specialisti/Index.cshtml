@@ -1,0 +1,66 @@
+﻿@page
+@model Salon_Infrumusetare.Pages.Specialisti.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Specialist[0].Prenume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Specialist[0].Nume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Specialist[0].Specialitate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Specialist[0].AnVechime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Specialist[0].Telefon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Specialist[0].Instagram)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Specialist) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prenume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Specialitate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnVechime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Instagram)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
